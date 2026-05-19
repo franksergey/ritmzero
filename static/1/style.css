@@ -565,6 +565,10 @@ button:hover {
         transparent 25%);
 }
 
+.cover-2    {
+    height: 100svh;
+}
+
 .client-pain {
     height: 350vh;
 
@@ -789,7 +793,9 @@ input:focus-visible {
     }  
 
     .decision   {
-        padding:    100px   0   12svw   0;
+        padding:                100px   0   12svw   0;
+        background-size:        84vw;
+        background-position:    -10svw  0svw;
     }
 
     .decision h5    {
@@ -801,21 +807,27 @@ input:focus-visible {
         justify-content:    center;
     }
 
+    .face-control   .p-frame    {
+        margin:     4svw    32svw;
+    }
+
     .cover-2 hgroup {
         margin:     0   20svw;
     }
 
+    .cover  {
+        padding:     0   3svw    4svw    3svw;
+    }
+
     p {
-        font-size: 2em;
+        font-size: 1.3em;
     }
 
     .schedule {
-
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 0 10svw;
-
+        display:            flex;
+        flex-direction:     column;
+        justify-content:    space-between;
+        align-items:        center;    
     }
 
     .schedule svg {
@@ -830,6 +842,12 @@ input:focus-visible {
        display: none; 
     }
     
+    .diving {
+        display:        flex;
+        width:          60%;
+        flex-direction: column;
+        margin:         25svw    auto;
+    }
 
     .button-sticky  {
         width:  fit-content;
@@ -838,13 +856,105 @@ input:focus-visible {
         bottom: auto;
         margin: 0;
 
+        font-size:  1.5em;
+
         transform: translateY(-120px);
     }
 
     .cover  button  {
-        width:  fit-content;
+        width:      fit-content;
+        font-size:  1.5em;
     }
 
+    .cover  h6  {
+        font-size:  2em;
+        margin:     0   0   1svw    0;
+        width: ;
+    }
+
+    .cover-2    {
+        margin:     10svw   0;
+    }
+
+
+
+    hgroup  p   {
+        margin: 0;
+    }
+
+    .timeline   {
+        gap:    30svw;
+    }
+
+    .timeline   hgroup  {
+        grid-template-columns:  7svw    0.7fr;
+    }
+
+    .timeline::before   {
+        left:   6.5svw;
+    }
+
+    .timeline   h6  {
+        margin: 0 0 1.2svw;
+    }
+
+    figcaption  {
+        font-size:  1.5em;
+        margin:     1svw    0;
+    }
+
+    #sticker-1  {
+        width:      26svw;
+        left:       6svw;
+        margin-top: -5svw;
+    }
+
+    #sticker-2  {
+        width:      23svw;
+        right:      8svw;
+        margin-top: 24svw;
+    }
+
+    .kodex  {
+        height:                 87svw;
+        padding:                15svw   0   80px    0;
+        background-size:        87vw;
+        background-position:    53.5svw 0;
+    }
+
+    .ritm-130   {
+        background-size:    65em;
+        background-repeat:  repeat-x;
+        padding:            12svw   10px;
+    }
+
+    .ritm-130   .text-center    {
+        margin: 28svw   50px    0   50px;
+    }
+
+    .project-history    hgroup  {
+        display:        flex;
+        width:          40%;
+        flex-direction: column;
+        margin:         auto;
+    }
+
+    .project-history    h5  {
+        margin: 200px   0   2svw    0;
+    }
+
+    .project-history    p  {
+        margin: 1svw   0;
+    }
+
+    .space  hgroup  {
+        width:  40%;
+        margin: 5svw;
+    }
+
+    .space  h4  {
+        margin: 2svw;
+    }
 }
 
 

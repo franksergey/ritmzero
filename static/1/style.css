@@ -1049,6 +1049,10 @@ input:focus-visible {
         padding:            12svw   10px;
     }
 
+    .p-accent-2 {
+        width: 25%;
+    }
+
     .ritm-130   .text-center    {
         margin: 28svw   50px    0   50px;
     }

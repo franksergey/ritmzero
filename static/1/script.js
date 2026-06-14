@@ -20,10 +20,25 @@ window.addEventListener("scroll", () => {
         index = 1;
     }
 
-    texts.forEach((text, i) => {
-        text.classList.toggle("p-active", i === index);
-    });
+    // Ограничиваем progress диапазоном 0-1
+    const clampedProgress = Math.min(Math.max(progress, 0), 1);
 
+    // Масштаб от 1 до 0.92
+    const scale = 1 - clampedProgress * 0.2;
+
+    texts.forEach((text, i) => {
+
+        const active = i === index;
+
+        text.classList.toggle("p-active", active);
+
+        if (active) {
+            text.style.transform = `scale(${scale})`;
+        } else {
+            text.style.transform = "scale(1)";
+        }
+
+    });
 
     const triggerTop = trigger.getBoundingClientRect().top;
     const footerTop = footer.getBoundingClientRect().top;

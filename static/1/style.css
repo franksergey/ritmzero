@@ -325,7 +325,7 @@ section {
 }
 
 button {
-    border: none;
+    border: none !important;
     width: 100%;
     padding: 10px 20px; 
     border-radius: 100px;
@@ -335,9 +335,25 @@ button {
     font-size: 1em; 
     background-color: transparent;
     border: 1px solid black;
+    cursor: pointer;
 }
 
+button[data-tc-event] {
 
+    border: none !important;
+    padding: 0 20px !important; 
+    border-radius: 100px !important;
+
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1em !important; 
+    background-color: black !important;
+    text-transform: none !important;
+    border: 1px solid black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+
+
+}
 
 
 footer {
@@ -355,10 +371,12 @@ footer {
     }
 
     & p {
+        width: 80%;
         font-size: 0.9em;
         color: rgba(255, 255, 255, 0.7);
 
         @media  (min-width: 900px)  {
+            width: 100%;
             font-size: 1.5em;
         }
     }

@@ -672,7 +672,7 @@ button:hover {
 
     height: 100svh;
     width: 100%;
-    background-image: url("media/cover-background-image.webp");
+    background-image: url("media/cover-background-image.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -880,7 +880,7 @@ button:hover {
     position: absolute;
     width: 193svw;
 
-    top: 78svw;
+    top: 101svw;
     left: -95svw;
 
     z-index: 2;
@@ -950,13 +950,13 @@ button:hover {
 }
 
 #collage-photo-4 {
-    width: 53svw;
-    height: 53svw;
+    width: 74svw;
+    height: 74svw;
     object-fit: cover;
 
     position: relative;
     top: -39svw;
-    left: 11svw;
+    left: 5svw;
 
     z-index: 2;
 
@@ -1051,6 +1051,39 @@ button:hover {
         width:          60%;
         flex-direction: column;
         margin:         18svw    auto;
+    }
+}
+
+.ritm-130-2 {
+    position: relative;
+
+    height: 120svh;
+    width: 100%;
+    background-image: url("media/ritm-130-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+
+    & svg {
+        width: 35svw;
+        
+        position: absolute;
+        top: 15svw;
+        right: 10svw;
+
+        z-index: 2;
+
+        @media  (min-width: 900px)  {   
+            width: 10svw;
+        }
+    }
+
+    & p {
+        text-align: center;
+        position: absolute;
+        bottom: 0svw;
+        margin: 10svw;
     }
 }
 

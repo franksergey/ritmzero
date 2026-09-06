@@ -19,6 +19,7 @@ services:
 
     volumes:
       - ./nginx/ritmzero.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/ritmzero-proxy.conf:/etc/nginx/conf.d/proxy.conf:ro
       - ./nginx/certs:/etc/nginx/certs:ro
 
     networks:

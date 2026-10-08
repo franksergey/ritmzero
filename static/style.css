@@ -144,6 +144,36 @@ a:hover {
     color: white;
 }
 
+.vertical-space.S {
+  height: 1em;
+  
+  @media (max-width: 768px) {
+    height: 0.5em;  
+  }
+}
+
+.vertical-space.M {
+  height: 2em;
+
+  @media (max-width: 768px) {
+    height: 1em;    
+  }
+}
+
+.vertical-space.L {
+  height: 4em;
+  @media (max-width: 768px) {
+    height: 2em;    
+  }
+}
+
+.vertical-space.XL {
+  height: 9em;
+  @media (max-width: 768px) {
+    height: 9em;    
+  }
+}
+
 /* ————————————— general tag ————————————— */
 * {
     box-sizing: border-box;
@@ -213,7 +243,7 @@ figcaption {
 } */
 
 button {
-    border: none !important;
+    /* border: none !important; */
     width: 100%;
     padding: 10px 20px; 
     border-radius: 100px;
@@ -233,7 +263,7 @@ button[data-tc-event] {
 
     border: none !important;
     padding: 0 20px !important; 
-    border-radius: 100px !important;
+    border-radius: 0.6em !important;
 
     font-family: 'Inter', sans-serif !important;
     font-size: 1em !important; 
@@ -327,13 +357,17 @@ footer {
 
 
 .button-sticky {
-    position:   fixed;
-    width:      88svw;
-    bottom:     0;
-    color:    white;
-    background-color: black;
+    position: fixed;
+    display: flex;
+    align-items: baseline;
+    width: 88svw;
+    bottom: 0;
+    /* color:    white;
+    background-color: black; */
     margin:     3svw    6svw;
     z-index:    3;
+
+    /* padding: 2em 20px; */
 
     transform:  translateY(120px);
     opacity:    0;
@@ -341,7 +375,8 @@ footer {
     transition: transform 0.5s ease, opacity 0.5s ease;
 
     @media  (min-width: 900px)  {
-        width:  fit-content;
+        /* width:  fit-content; */
+        flex-direction: row-reverse;
         top:    2svw;
         right:  2svw;
         bottom: auto;
@@ -350,6 +385,30 @@ footer {
         font-size:  1.5em;
 
         transform: translateY(-120px);
+    }
+
+    & .button-tickets {
+        width: 100%;
+        padding: 0.8em 0;
+        border-radius: 2em;
+        color: white;
+        /* border: solid 1.5px black; */
+        /* width: fit-content; */
+        background-color: black;
+
+        @media  (min-width: 900px)  {
+            width: fit-content;
+            padding: 0.8svw 1em;
+        }
+    }
+
+    & a {
+        text-align: center;
+        text-decoration: none;
+        background-color: transparent; 
+        border: none; 
+        color: black; 
+        padding: 0.8em 1.5em;
     }
 }
 
@@ -550,6 +609,39 @@ button:hover {
             display: block; 
         }
     } 
+
+    & .button-nav {
+        font-size: 1.1em;
+
+        @media  (min-width: 900px)  {
+            font-size: 1.3em;
+        }
+
+        display: flex;
+        align-items: baseline;
+        width: fit-content;
+
+        & .button-tickets {
+            padding: 0.8em 2em;
+            border-radius: 2em;
+            background-color: black;
+
+            @media  (min-width: 900px)  {
+                padding: 0.8svw 2em;
+            }
+        }
+
+
+        & a {
+            text-align: center;
+            text-decoration: none;
+            background-color: transparent; 
+            border: none; 
+            color: white;
+            /* color: black;  */
+            padding: 0.8em 1.5em;
+        }
+    }
 }
 
 .client-pain {
@@ -889,6 +981,259 @@ button:hover {
             display: block;
         }
     }
+}
+
+.tickets {
+  & ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    /* margin-bottom: 1em; */
+    margin: auto;
+    width: 90%;
+    /* max-width: 90%; */
+
+    /* padding: 0 7em; */
+
+    --gap: 3.2em;
+    --columns: 3;
+    --gap-number: calc(var(--columns) - 1);
+
+    gap: var(--gap);
+
+    @media (max-width: 768px) {
+      --columns: 1;
+        width: 80%;
+        padding: 0;
+        font-size: 1em;
+        --gap: 1.5em;
+    }
+  }
+
+  & li {
+      font-size: 1.1em;
+      position: relative;
+      width: calc((100% - var(--gap-number) * var(--gap)) / (var(--columns)));
+      /* padding: 0.5em 2em; */
+      
+    transition: background-color 0.5s ease, text-decoration-color 0.5s ease;
+
+    @media  (min-width: 900px)  {  
+        /* padding: 0.5em 1.5em; */
+    }
+
+    & h3 {
+        font-size: 3.5em;
+    }
+  }
+
+  & hgroup {
+        text-align: center;
+        border-radius: 0 0 0.6em 0.6em;
+        border-bottom: 1.5px solid black;
+        border-left: 1.5px solid black;
+        border-right: 1.5px solid black;
+
+        padding: 1em;
+        margin-bottom: -1.5px;
+    
+        @media  (min-width: 900px)  {  
+            /* border-radius: 1.0em; */
+            border-bottom: 1.5px solid black;
+            border-left: 1.5px solid black;
+            border-right: 1.5px solid black;
+        }
+    }
+
+    & .no-padding {
+        padding: 0.3em 1em 0em;
+
+    }
+
+
+
+
+  & h2 {
+    font-size: 11em;
+    font-variation-settings: "wdth" 42;
+    text-align: center;
+    position: relative;
+    top: -0.15em;
+    letter-spacing: -3%;
+
+    @media  (min-width: 900px)  {  
+        font-size: 12em;    
+    }
+  }
+
+  & h3 {
+    font-size: 5em;
+    font-variation-settings: "slnt" 0, "wdth" 78; 
+    text-align: center;
+    position: relative;
+    top: -0.15em;
+    @media  (min-width: 900px)  {  
+        font-size: 7em;    
+    }
+  }
+
+  & h4 {
+    font-size: 2.5em;
+    font-variation-settings: "slnt" 0, "wdth" 60; 
+  }
+
+  & button {
+    padding: 1em 20px;
+    border-radius: 0.6em;
+
+    @media  (min-width: 900px)  {  
+        border-radius: 1.0em;
+    }
+  }
+
+  & .time {
+    /* font-weight: 600; */
+    /* font-size: 1.2em; */
+    color: #FC709C;
+    background-color: black;
+    border-radius: 10em;
+    padding: 0.2em 0.4em;
+    border: solid 1.5px black;
+
+    @media  (min-width: 900px)  {  
+        /* font-size: 1.7em; */
+    }
+
+  }
+
+  /* & .time {
+    width: fit-content;
+    color: #FC709C;
+    background-color: black;
+    border-radius: 10em;
+    padding: 0.05em 0.9em 0.1em;
+  } */
+
+  & .tickets-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    border-top: 1.5px solid black;
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+
+    /* background-color: black;
+    color: #FC709C; */
+
+    padding: 0.5em 0.4em 0 0.7em;
+    /* margin-bottom: -2px; */
+    border-radius: 0.6em 0.6em 0 0;
+
+    font-size: 1.1em;
+
+    @media  (min-width: 900px)  {  
+        font-size: 1em;
+    }
+  }
+
+  & .tickets-price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.7em;
+    padding: 0 1em;
+    font-size: 0.8em;
+    text-align: left;
+
+    color: rgb(0 0 0 / 0.5);
+
+    & .price {
+        color: black;
+        font-size: 1.4em;
+        font-weight: 500;
+
+        @media  (min-width: 900px)  {  
+        font-size: 1.8em;
+    }
+    }
+  }
+
+  & .live {
+    /* position: absolute;
+    left: 1.5em;
+    top: 0.75em; */
+
+    margin: auto;
+    width: fit-content;
+
+    color: #FC709C;
+    background-color: black;
+    border-radius: 10em;
+    padding: 0.3em 0.9em 0.3em;
+
+    @media  (min-width: 900px)  {  
+        /* left: 1.5em;
+        top: 0.75em; */
+        padding: 0.05em 0.9em 0.1em;
+    }
+    /* border: solid 1.5px black; */
+
+  }
+
+  & .tickets-none-border {
+    border-radius: 0;
+    border-bottom: 0;
+    border: 0;
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+
+    & .time {
+        background-color: #FC709C;
+        color: black;
+        border: 0;
+    }
+  }
+
+  & .tickets-ritm-130 {
+    border-left: 1.5px solid;
+    border-right: 1.5px solid;
+
+    & .tickets-top{
+        background-color: black;
+        color: #FC709C;
+        /* border-radius: 0; */
+        border: 0;
+
+        margin: 0 0.3em -2px;
+
+/* 
+        & .time {
+            background-color: #FC709C;
+            color: black;
+        } */
+
+    }
+
+
+
+    & hgroup {
+        font-size: 1.1em;
+        background-color: black;
+        color: #FC709C;
+        /* border-radius: 0; */
+        margin: 0 0.3em;
+        padding: 0.5em;
+    }
+
+    & .tickets-price {
+        color: #FC709C;
+        & .price {
+            color: #FC709C;
+        }
+    }
+
+  }
+
 }
 
 .schedule {
